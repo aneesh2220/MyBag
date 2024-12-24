@@ -1,0 +1,87 @@
+.sidebar {
+  width: 15%;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  padding: 12px;
+  top: 0;
+  left: 0;
+}
+
+.sidebar h2 {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.sidebar .main-icon {
+  font-size: 2rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.sidebar h2 span {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  font-weight: 550;
+  color: rgb(81, 110, 255);
+}
+
+.sidebar h2 span:hover {
+  transform: matrix(1.1);
+}
+
+.sidebar-icon {
+  color: black;
+  height: 25px;
+  width: 70px;
+}
+
+.sidebar .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: left;
+  justify-content: left;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar .sidebar-content .divX {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  padding: 2px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-content div:hover {
+  background-color: var(--widget-color);
+}
+
+.sidebar .sidebar-content div a {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding-right: 25px;
+}
+
+
+
+.active-div{
+  background-color: var(--widget-color);
+}

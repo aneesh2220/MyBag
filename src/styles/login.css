@@ -1,0 +1,81 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-inbox {
+  min-width: 20%;
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-inbox h3 {
+  text-align: center;
+  width: 100%;
+}
+
+.login-content {
+  /* padding-left: 100px;
+    padding-right: 100px; */
+  padding:  16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-content button {
+  background-color: var(--widget-color);
+  min-width: 50px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: transform 0.2s ease-in-out;
+  min-height: 30px;
+  border-radius: 8px;
+}
+
+.login-content button:hover {
+  transform: scale(1.1);
+}
+
+.login-content input {
+  background-color: transparent;
+  border-radius: 8px;
+  min-height: 30px;
+  border: 0.5px solid black;
+}
+
+.login-button-group {
+  height: 40px;
+  width: 80%;
+  border-radius: 16px;
+  display: flex;
+}
+
+.login-button-group button {
+  height: 100%;
+  width: 50%;
+  outline: none;
+  border: none;
+}
+
+.login-button-group button:nth-child(1) {
+  border-radius: 16px 0 0 16px;
+}
+
+.login-button-group button:nth-child(2) {
+  border-radius: 0 16px 16px 0;
+}
+
+.active-btn {
+  background-color: var(--widget-color);
+}

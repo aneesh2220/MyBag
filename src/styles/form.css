@@ -1,0 +1,90 @@
+.formI {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.form-Inbox {
+  background-color: white;
+  height: 400px;
+  width: 27%;
+  position: absolute;
+  left: 36.6%;
+  top: 20%;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  
+}
+    
+.form-Inbox p {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.form-Inbox .input-holder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+}
+
+.form-Inbox .input-holder input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+
+.add-btn{
+
+    height: 25px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    
+}
+.add-btn input{
+    cursor: pointer;
+
+    height: 25px;
+    width: 75px;
+    background-color: #005da6;
+    outline: none;
+    border: none;
+    color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

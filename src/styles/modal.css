@@ -1,0 +1,31 @@
+.product-modal{
+
+
+background-color: white;
+height: 98%;
+width: 40%;
+position: absolute;
+left: 28%;
+top: 1%;
+border-radius: 8px;
+z-index: 100;
+border: 1px solid #ccc;
+
+
+
+}
+
+
+.exit-payments {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    float: right;
+    padding-bottom: 50%;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: gray;
+  }
+
+  

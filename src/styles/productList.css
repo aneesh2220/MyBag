@@ -1,0 +1,54 @@
+.product-page {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+
+.product-list {
+  width: 78%;
+  height: 85%;
+  background-color: white;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+
+  .list-header {
+    background-color: var(--widget-color);
+    height: 9%;
+    margin: 15px;
+    display: flex;
+    border-radius: 18px;
+    padding: 8px;
+
+    p {
+      flex: 1;
+    }
+  }
+
+  .list-item {
+    background-color: white;
+    height: 9%;
+    margin: 15px;
+    display: flex;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+
+
+    p {
+      flex: 1;
+    }
+  }
+}
+
+
+
+.list-item:hover {
+    background-color: var(--main-color);
+
+}
