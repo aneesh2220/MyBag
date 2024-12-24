@@ -8,6 +8,7 @@ import ProductModal from "../components/modal.jsx";
 let ProductList = () => {
   let [productList, setproductList] = useState([]);
   let [modal, setModal] = useState(false);
+  let[current,setCurrent]= useState();
 
   let fetchProducts = async () => {
     let userId = localStorage.getItem("userId");
@@ -43,6 +44,7 @@ let ProductList = () => {
             className="list-item"
             onClick={() => {
               setModal(true);
+              setCurrent(val)
             }}
           >
             <p>{val.name}</p>
@@ -56,6 +58,7 @@ let ProductList = () => {
 
         {modal === true ? (
           <ProductModal
+val={current}
             exit={() => {
               setModal(false);
             }}

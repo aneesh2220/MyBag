@@ -9,6 +9,9 @@ import { BiSolidShoppingBagAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { AiFillProduct } from "react-icons/ai";
+import { HiOutlineLogout } from "react-icons/hi";
+import { auth } from "../firebase.js";
+import { signOut } from "firebase/auth";
 
 let Sidebar = ({ activa = 0 }) => {
   let [active, setactive] = useState(activa);
@@ -33,6 +36,12 @@ let Sidebar = ({ activa = 0 }) => {
   let goSetting = () => {
     setactive(3);
     navigate("/settings");
+  };
+
+  let setLogout = async () => {
+    await signOut(auth);
+    localStorage.removeItem("userId");
+    navigate("/");
   };
 
   return (
@@ -63,7 +72,7 @@ let Sidebar = ({ activa = 0 }) => {
           className={`divX ${active === 2 ? "active-div" : ""}`}
           onClick={goProducts}
         >
-          <AiFillProduct className="sidebar-icon"/>
+          <AiFillProduct className="sidebar-icon" />
           <a href="">Products</a>
         </div>
 
@@ -73,6 +82,11 @@ let Sidebar = ({ activa = 0 }) => {
         >
           <IoSettings className="sidebar-icon" />
           <a href="">Settings</a>
+        </div>
+
+        <div className={`divX`} onClick={setLogout}>
+          <HiOutlineLogout className="sidebar-icon" />
+          <a href="">Logout</a>
         </div>
       </div>
     </div>
