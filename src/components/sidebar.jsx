@@ -41,7 +41,7 @@ let Sidebar = ({ activa = 0 }) => {
   let setLogout = async () => {
     await signOut(auth);
     localStorage.removeItem("userId");
-    navigate("/");
+    navigate("/auth");
   };
 
   return (
