@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dropdown = ({ options, onSelectionChange }) => {
+let MyDropdown = ({ options, onSelectionChange }) => {
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleChange = (event) => {
@@ -23,5 +23,4 @@ const Dropdown = ({ options, onSelectionChange }) => {
         </div>
     );
 };
-
-export default Dropdown;
+export default MyDropdown;

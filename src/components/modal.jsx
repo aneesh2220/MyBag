@@ -3,16 +3,38 @@ import "../styles/modal.css";
 import { ImCross } from "react-icons/im";
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { dataBase } from "../firebase.js";
+import MyDropdown from "../components/dropdown.jsx";
 
 let ProductModal = ({ exit, val }) => {
   let [quantity, setQuantity] = useState(val.quantity);
   let [status, setStatus] = useState(val.status);
 
+
+  const options = [
+    { label: "in-stock", value: "instock" },
+    { label: "out-of-stock", value: "outofstock" },
+    { label: "shortage", value: "shortage" },
+    { label: "re-stocking", value: "restocking" },
+  ];
+
+
   let handleSave = async (e) => {
     e.preventDefault();
+
+    if (status === val.status) {
+      if (quantity === 0) {
+        setStatus('out-of-stock');
+      }
+      else if (quantity < 3) {
+        setStatus('shortage');
+      }
+    }
+
     try {
       let docRef = doc(dataBase, "products", val.id);
-      await updateDoc(docRef, { quantity: quantity });
+
+
+      await updateDoc(docRef, { quantity: quantity, status: status });
       exit();
     } catch (error) {
       console.log(error);
@@ -55,7 +77,7 @@ let ProductModal = ({ exit, val }) => {
           <div></div>
 
           <form onSubmit={handleSave}>
-            <div className="editable">
+          <div className="editable">
               <h2>Quantity and Status</h2>
               <button type="submit">Save</button>
             </div>
@@ -68,7 +90,18 @@ let ProductModal = ({ exit, val }) => {
                   setQuantity(e.target.value);
                 }}
               />
+              
+              
             </div>
+
+            <div className="editable">
+              <h3>Status:</h3>
+              <MyDropdown options={options} onSelectionChange={setStatus}/>
+              
+              
+            </div>
+            
+            
           </form>
         </div>
       </div>

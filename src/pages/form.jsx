@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/form.css";
 import "../data/items.js";
 import { useNavigate } from "react-router-dom";
-import Dropdown from "../components/dropdown.jsx";
+import MyDropdown from "../components/dropdown.jsx";
 import Sidebar from "../components/sidebar.jsx";
 import foodCategories, {
   clothingCategories,
@@ -64,7 +64,7 @@ let FormI = () => {
         <div className="form-Inbox">
           <p className="inbox-heading">Add Item </p>
           <div className="input-holder">
-            <Dropdown options={options} onSelectionChange={setSelectItem} />
+            <MyDropdown options={options} onSelectionChange={setSelectItem} />
 
             <input
               type="text"
@@ -82,14 +82,14 @@ let FormI = () => {
             />
 
             {selectItem === "food" ? (
-              <Dropdown
+              <MyDropdown
                 options={foodCategories}
                 onSelectionChange={setCategry}
               />
             ) : selectItem === "electronics" ? (
               <div>
                 {" "}
-                <Dropdown
+                <MyDropdown
                   options={electronicsCategories}
                   onSelectionChange={setCategry}
                 />
@@ -110,11 +110,11 @@ let FormI = () => {
                   value={brand}
                   onChange={(e) => setBrand(e.target.value)}
                 />
-                <Dropdown
+                <MyDropdown
                   options={clothingCategories}
                   onSelectionChange={setCategry}
                 />
-                <Dropdown
+                <MyDropdown
                   options={genderCategries}
                   onSelectionChange={setGender}
                 />
