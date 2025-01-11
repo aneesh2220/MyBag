@@ -20,7 +20,7 @@ let Sidebar = ({ activa = 0 }) => {
 
   let goDashboard = () => {
     setactive(0);
-    navigate("/dashboard");
+    navigate("/products");
   };
 
   let addItem = () => {
@@ -53,13 +53,6 @@ let Sidebar = ({ activa = 0 }) => {
         MY <span>Bag</span>
       </h2>
       <div className="sidebar-content">
-        <div
-          onClick={goDashboard}
-          className={`divX ${active === 0 ? "active-div" : ""}`}
-        >
-          <MdOutlineGridView className="sidebar-icon" />
-          <a href="">Dashboard</a>
-        </div>
         <div
           onClick={addItem}
           className={`divX ${active === 1 ? "active-div" : ""}`}

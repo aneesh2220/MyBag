@@ -14,7 +14,7 @@ let Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       localStorage.setItem("userId", auth.currentUser.uid);
-      navigate("/dashboard");
+      navigate("/products");
 
     } catch (error) {
       console.log(error.message);

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import FormI from "./pages/form.jsx";
 import Dashboard from "./pages/dashboard.jsx";
-import Authpage from "./pages/authentication.jsx";;
+import Authpage from "./pages/authentication.jsx";import ProductList from "./pages/productlist.jsx";
+;
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <div className="App">
       {
         userId !=null
-        ?<Dashboard/>
+        ?<ProductList/>
         :<Authpage/>
         
       }

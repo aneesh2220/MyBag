@@ -3,11 +3,14 @@ import "../styles/login.css";
 import { auth, dataBase } from "../firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+
 
 let Signup = () => {
   let [usernameX, setusernameX] = useState("");
   let [passwordX, setPasswordX] = useState("");
   let [emailX, setEmailX] = useState("");
+  let navigate = useNavigate();
 
   let handleSignUp = async (e) => {
     e.preventDefault();
@@ -18,11 +21,12 @@ let Signup = () => {
       console.log(user);
 
       if (user != null) {
-        localStorage.setItem("userId", user.uid)
+        localStorage.setItem("userId", user.uid);
         setDoc(doc(dataBase, "Users", user.uid), {
           email: emailX,
           username: usernameX,
         });
+        navigate("/products");
       }
     } catch (error) {
       console.log(error.message);
